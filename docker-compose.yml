@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  person:
+    build: person/
+    ports:
+      - "5001:5001"
+    environment:
+      - REDIS_HOST=redis
+  gateway:
+    build: gateway/
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=redis
+    command: ["python3", "scripts/wait-wait.py"]
+  redis:
+    image: "redis:alpine"
+    ports:
+     - "6379:6379"

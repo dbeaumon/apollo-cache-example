@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "name": "person",
+      "service": "person",
+      "stack": "localdev",
+      "url": "http://person:5001/graphql",
+      "host": "person",
+      "port": 5001
+    }
+  ]
+}
